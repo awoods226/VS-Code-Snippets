@@ -53,7 +53,8 @@
       "        <div></div>" ,
       "    );",
       "\\};"
-    ] 
+    ] ,
+    "description": "Creates a stateless react component with props"
   },
   "classConstructor": {
     "prefix": "tscon",
