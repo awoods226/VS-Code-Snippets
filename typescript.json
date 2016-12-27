@@ -36,6 +36,14 @@
 		],
 		"description": "Adds a redux action creator with a single parameter"
 	},
+	"reduxAction": {
+		"prefix": "rda",
+		"body": [
+			"export type ${NAME} = '${NAME}';",
+			"export const ${NAME}: ${NAME} = '${NAME}';"
+		],
+		"description": "Create a strongly typed redux action"
+	},
 	"reduxActionCreator": {
 		"prefix": "rdac",
 		"body": [
