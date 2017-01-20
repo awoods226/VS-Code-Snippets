@@ -27,15 +27,6 @@
 		"body": "constructor(public ${param: name}: ${dataType: type}) {\n\tsuper();$0\n}",
 		"description": "Adds a default constructor for the class that contains props as arguments"
 	},
-	"reduxActionCreatorWithParam": {
-		"prefix": "rdacp",
-		"body": [
-			"${creatorName}: (${paramName}: number): ActionCreator => (dispatch, getState) => \\{",
-			"    dispatch(new ${actionName}(${paramName}));",
-			"}"
-		],
-		"description": "Adds a redux action creator with a single parameter"
-	},
 	"reduxAction": {
 		"prefix": "rda",
 		"body": [
@@ -44,10 +35,19 @@
 		],
 		"description": "Create a strongly typed redux action"
 	},
+	"reduxActionCreatorWithParam": {
+		"prefix": "rdacp",
+		"body": [
+			"${creatorName}: (${paramName}: number): ActionCreator => (dispatch, getState) => {",
+			"    dispatch(new ${actionName}(${paramName}));",
+			"}"
+		],
+		"description": "Adds a redux action creator with a single parameter"
+	},
 	"reduxActionCreator": {
 		"prefix": "rdac",
 		"body": [
-			"${creatorName}: (): ActionCreator => (dispatch, getState) => \\{",
+			"${creatorName}: (): ActionCreator => (dispatch, getState) => {",
 			"    dispatch(new ${actionName}());",
 			"}"
 		],
@@ -56,7 +56,7 @@
 	"reduxReducerAction": {
 		"prefix": "rdra",
 		"body": [
-			"if (isActionType(action, ${actionName})) \\{",
+			"if (isActionType(action, ${actionName})) {",
 			"    return Object.assign({}, state, {$2});",
 			"}"
 		],
