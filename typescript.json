@@ -37,7 +37,10 @@
 		"body": [
 			"export function* ${1: saganame}() {",
 			"    try {",
-			"        const $2",
+			"        const result = yield call($2)",
+			"        if (result.success === false) {",
+			"            throw result.payload;",
+			"        }",
 			"    } catch (error) {",
 			"        console.log(error);",
 			"        yield put({",
