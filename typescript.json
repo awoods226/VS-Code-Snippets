@@ -35,9 +35,9 @@
 	"Basic Saga": {
 		"prefix": "sga",
 		"body": [
-			"export function* ${1: saganame}() {",
+			"export function* ${1: saganame}(action: ActionByType<AppActions, typeof ActionTypes.${2: actionType}>) {",
 			"    try {",
-			"        const result = yield call($2)",
+			"        const result = yield call($3)",
 			"        if (result.success === false) {",
 			"            throw result.payload;",
 			"        }",
